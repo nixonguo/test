@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<config>
+	<icossme>
+		<sppk>
+			<syarat.kondisi.sppk>Sesuai dengan ketentuan yang berlaku di BCA</syarat.kondisi.sppk>
+			<jabatan.sppk.dbm>Kepala Pengembangan Bisnis Cabang</jabatan.sppk.dbm>
+			<jabatan.sppk.bm>Kepala Kantor Cabang Utama</jabatan.sppk.bm>
+			<biaya.admin.sppk>Sesuai tagihan</biaya.admin.sppk>
+			<biaya.penilaian.sppk>Sesuai tagihan</biaya.penilaian.sppk>
+			<biaya.notaris.sppk>Sesuai tagihan</biaya.notaris.sppk>
+			<biaya.asuransi.sppk>Sesuai tagihan</biaya.asuransi.sppk>
+		</sppk>
+		<nlo>
+			<svc>
+				<app.access.key>2g4-sd5y-ICOS-d7e</app.access.key>
+				<app.source>ICOS</app.source>
+				<url>
+					<request.cbas>http://10.20.212.129:50073/nlo-svc-int/cbas/requestCBAS</request.cbas>
+					<get.slik.pdf>http://10.20.212.129:50073/nlo-svc-int/cbas/getSLIKPDF</get.slik.pdf>
+				</url>
+			</svc>
+		</nlo>
+		<etc>
+			<app.code>ICOS::SME</app.code>
+			<notification.msg></notification.msg>
+			<paging.number>30</paging.number>
+			<lookup.number>10</lookup.number>
+			<lookup.frame.const.moving>470</lookup.frame.const.moving>
+			<lookup.frame.const.height>470</lookup.frame.const.height>
+			<debug.logid>USEREAI~AOPJY1</debug.logid>
+			<message.properties.path>D:/Projects/ICOS-SME/icos-smekom/config/bcaicossme_msg.properties</message.properties.path>
+			<disable.login>N</disable.login>
+			<scoring.rules.active>Y</scoring.rules.active>
+			<validasi.nilai.penyesuaian>Y</validasi.nilai.penyesuaian>
+			<enable.feature.kur>Y</enable.feature.kur>
+			<enable.branch.kur>0001,0002,0003,0005,0006,0007,0008,0009,0010,0011,0012,0013,0015,0018,0020,0021,0022,0024,0025,0026,0027,0028,0029,0031,0032,0033,0034,0035,0037,0038,0039,0040,0041,0042,0043,0044,0045,0046,0047,0048,0050,0051,0054,0055,0056,0057,0058,0061,0065,0066,0069,0070,0081,0084,0088,0089,0090,0094,0095,0096,0108,0113,0117,0119,0121,0122,0134,0146,0148,0168,0177,0180,0182,0183,0185,0191,0194,0195,0198,0205,0206,0217,0218,0230,0231,0238,0245,0253,0258,0261,0277,0288,0291,0296,0297,0300,0314,0319,0335,0342,0346,0372,0380,0383,0428,0437,0450,0468,0497,5220,6040,6800,7400,7770,7805,7850,7880,7890,7900,7910,7920,8050,8140,8160,8170,8200,8220,8240,8270,8290,8460,8600,8650,8690,8895,0998</enable.branch.kur>
+			<limit.kur>
+				<ritel>117197543561.31</ritel>
+				<mikro>7683250004</mikro>
+				<persen.nonProd>0.8</persen.nonProd>
+			</limit.kur>
+			<scoring.service.location></scoring.service.location>
+			<scoring.sme.main.scheme.id>b35ead5fe479d13384f5c449a3df320b</scoring.sme.main.scheme.id>
+			
+			<web.path>http://10.20.212.129:50043/icossme</web.path>
+			<image.path>/bcaisme/app/etc/upload/image</image.path>
+			<ras.path>smb://10.20.201.101/ISME$</ras.path>
+			<docgen.ras.path>smb://10.20.201.101/ISME$</docgen.ras.path>
+		</etc>
+		<datasource>
+			<icossme>java:/ds_ICOSSME</icossme>
+			<esecure>java:/ds_ICOSSME</esecure>
+			<ccos>java:/ds_ICOSCL</ccos>
+			<ccms>java:/ds_CCMS</ccms>
+		</datasource>
+		<esb>
+			<ejb>
+				<eai.ad>
+					<provider.url>http://10.20.215.11:8603</provider.url>
+					<provider.url.prod.pilotwsa>t3://10.0.50.146:8103</provider.url.prod.pilotwsa>
+					<provider.url.prod.wsa>t3://10.0.50.146:8053,10.0.50.147:8053</provider.url.prod.wsa>
+					<ldap.path>GC://10.20.201.35</ldap.path>
+					<app.id>PRJ1</app.id>
+					<encrypt.key>123456789012345678901234</encrypt.key>
+					<bypass.ad.auth>Y</bypass.ad.auth>
+					<bypass.ad.auth.override>Y</bypass.ad.auth.override>
+				</eai.ad>
+				<ods.bridge>
+					<enable.ods.bridge>N</enable.ods.bridge>
+					<!-- <ods.bridge.url>t3://10.7.5.224:50043</ods.bridge.url> -->
+					<ods.bridge.url>t3://10.20.212.129:50049</ods.bridge.url>
+				</ods.bridge>
+				<bpm.interface>
+					<provider.url>http://10.20.215.11:8603</provider.url>
+					<jndi>bp.BpmInterface</jndi>
+				</bpm.interface>
+				<mf.interface>
+					<provider.url>http://10.20.215.11:8603</provider.url>
+					<jndi>MFInterface</jndi>
+				</mf.interface>
+			</ejb>
+			<osb>
+				<!--UAT-->
+				<addr>10.20.200.142:9303</addr>
+				<!--DEV-->
+				<!--<addr>10.20.200.140:9403</addr>-->
+				<client.id>8B9482730A152167016672D620D3D5B8</client.id>
+				<od.ils>
+					<success.code>ESB-11-000</success.code>
+				</od.ils>
+				<fee.plan>CP</fee.plan>
+				<end.date>99999999</end.date>
+				<freq>2</freq>
+			</osb>
+		</esb>
+		<rest>
+			<addr>10.20.215.11:9311</addr>
+			<loan>
+				<commitment>http://10.20.200.142:9311/Loan/LoanCommitment/{loan-account-number}</commitment>
+				<account>
+					<svc.url>http://10.20.215.11:9311/Loan/account</svc.url>
+					<!-- OSB or REST-->
+					<lnanw.mode>OSB</lnanw.mode>
+					<lninq.mode>REST</lninq.mode>					
+				</account>
+				<organization>
+					<svc.url>http://10.20.215.11:9311/Loan/organization-management</svc.url>
+					<account.type>account-type</account.type>
+					<account.no>account-no</account.no>
+					<!-- OSB or REST-->
+					<lbdf.mode>REST</lbdf.mode>
+				</organization>
+			</loan>			
+			<specta>
+				<create.opportunity>http://10.20.200.142:9311/crmspecta/quick-opportunity</create.opportunity>
+				<update.opportunity>http://10.20.200.142:9311/crmspecta/opportunity/{oppCd}/info</update.opportunity>
+				<inquiry.opportunity>http://10.20.200.142:9311/crmspecta/opportunity</inquiry.opportunity>
+		  </specta>
+		  <dukcapil>
+			<ektp.inq.url>http://10.20.215.11:9311/ektp</ektp.inq.url><!--DEV-->
+			<!--<ektp.inq.url></ektp.inq.url>--><!--UAT-->
+		  </dukcapil>
+		  <din>
+			<application.id>07d1d22a7b638156c136</application.id>
+			<inq.url>http://10.20.215.11:9311/DIN</inq.url><!--DEV-->
+			<!--<inq.url></inq.url>--><!--UAT-->
+		  </din>
+		  <rekom.suku.bunga>
+			<inq.url>http://10.20.215.11:9311/loan-applicant/interest-rate/{cis-no}/consideration</inq.url>
+		  </rekom.suku.bunga>
+		  <redflag.property>
+			<inq.url>http://10.20.215.10:8201/red-flag/property</inq.url>
+		  </redflag.property>
+		  <notarisotomatis>
+			<addr.notaris.auto>http://10.20.212.129:50073/cams/notaris/auto</addr.notaris.auto>
+			<addr.notaris.listnotaris>http://10.20.212.129:50073/cams/notaris/list</addr.notaris.listnotaris>
+			<addr.notaris.detailnotaris>http://10.20.212.129:50073/cams/notaris/detail</addr.notaris.detailnotaris>
+			<addr.notaris.cancelnotaris>http://10.20.212.129:50073/cams/notaris/cancel</addr.notaris.cancelnotaris>
+			<addr.notaris.manual>http://10.20.212.129:50073/cams/notaris/manual</addr.notaris.manual>
+			<appaccesskey.notaris>b1i-ic0s-ISME-m9p</appaccesskey.notaris>
+			<appsource.notaris>CAMS</appsource.notaris>
+			<addr.notaris.appealnotaris>http://10.20.212.129:50073/cams/notaris/appeal</addr.notaris.appealnotaris>
+		  </notarisotomatis>
+		  <aini>
+		  	<aini.addr>http://10.20.212.128:50077/aini/apis/hits</aini.addr>
+		  	<aini.client.id>0457b581</aini.client.id>
+		  	<aini.client.secret>9fd8c87c59c9523b9f4d70be07a3bbce</aini.client.secret>
+		  	<aini.api.key>49e28f74-4534-4ce6-aa24-26bbd56378ad</aini.api.key>
+		  	<aini.api.secret>7296f298-81a3-4540-94a0-a4daa1a79573</aini.api.secret>
+		  	<aini.app.access.key>BwPuYKxlC5qJfwO0</aini.app.access.key>
+		  	<aini.app.source>NLO2AINI</aini.app.source>
+		  </aini>
+		  <platformnotaris>
+			<addr.platform.order>https://devapi-staging.apps.ocp.dti.co.id/bca-notary/orders/api</addr.platform.order>
+			<addr.platform.cancel>https://devapi-staging.apps.ocp.dti.co.id/bca-notary/orders/api/cancellation</addr.platform.cancel>
+			<addr.platform.updatepic>https://devapi-staging.apps.ocp.dti.co.id/bca-notary/orders/api/pic/</addr.platform.updatepic>
+			<addr.platform.tglrencanaakad>https://devapi-staging.apps.ocp.dti.co.id/bca-notary/orders/api/akad-plans/</addr.platform.tglrencanaakad>
+			<addr.platform.updatenoref>https://devapi-staging.apps.ocp.dti.co.id/bca-notary/orders/api/references/</addr.platform.updatenoref>
+			<addr.platform.finishakad>https://devapi-staging.apps.ocp.dti.co.id/bca-notary/orders/api/finishes/</addr.platform.finishakad>
+			<addr.platform.fullappeal>https://devapi-staging.apps.ocp.dti.co.id/bca-notary/orders/api/full-appeals/</addr.platform.fullappeal>
+			<mypartner.address>http://10.20.213.184:50103/bca-partner</mypartner.address>
+			<mypartner.token>bfe2fa3d-f951-34dd-987c-db010dc907c2</mypartner.token>
+		  </platformnotaris>
+		  <stop.bayar>
+			<inq.url>http://10.20.214.87:80/myreport-web-api/api/stop-bayar/{cis}</inq.url>
+		  </stop.bayar>
+		  <histori.tggkan>
+			<inq.url>http://10.20.214.87:80/myreport-web-api/api/historical-tunggakan/{cis}</inq.url>
+		  </histori.tggkan>
+		  <dhn>
+			<inq.url>http://10.20.215.10:8201/customer-national-blacklist/</inq.url>
+		  </dhn>
+		</rest>
+		<od>
+			<context.factory>weblogic.jndi.WLInitialContextFactory</context.factory>
+			<ws.id>95140</ws.id>
+			<disb.time.limit>24:00</disb.time.limit>
+			<is.uat>Y</is.uat>
+			<uat.date>05/24/2010</uat.date>
+			<eai.mode>
+			<!--
+				<inqjaminan>OSB</inqjaminan>
+				<createcoll>OSB</createcoll>
+				<updcoll>OSB</updcoll>
+				<createcollrel>OSB</createcollrel>
+				<delcollrel>OSB</delcollrel>
+			-->
+				<lnnnw>OSB</lnnnw>
+			</eai.mode>
+			<timeout.notification>System currently not available,ECI_ERR_,MainframeProxy No Result,REEN PROBLEM,Transaction Rolledback,Connection Down,ABEND ERROR,ERROR IN PROCESS</timeout.notification>
+			<timeout.flag>N</timeout.flag>
+			<timeout.recipient>loris@dti.co.id</timeout.recipient>
+			<timeout.subject>ICOS Time Out Notification</timeout.subject>
+			<timeout.sender>icossme-noreply@dti.co.id</timeout.sender>
+		</od>
+		<report>
+			<docgen>
+				<client.type>1</client.type><!--1=JBoss, 2=WebLogic-->				
+				<birt.host>10.20.212.129</birt.host>
+				<birt.port>4489</birt.port>				
+				<birt.processor.ejb.url>remote://10.20.212.129:4489</birt.processor.ejb.url>
+				<birt.processor.ejb.security.principal>ejbuser</birt.processor.ejb.security.principal>
+				<birt.processor.ejb.security.credentials>remote@123</birt.processor.ejb.security.credentials>
+				<rptdesign.path>C:/bcaisme/app/etc/report/rptdesign/</rptdesign.path>
+				<output.path>C:/bcaisme/app/etc/report/pdf/</output.path>
+				<database.jdbc.class>oracle.jdbc.driver.OracleDriver</database.jdbc.class>
+				<database.url>jdbc:oracle:thin:@10.20.215.142:1526:dicossme</database.url>
+				<database.username>esecure</database.username>
+				<database.password>s3cur3</database.password>
+				<database.jndi.url>java:/ds_ICOSSME</database.jndi.url>
+			</docgen>
+			<condir.path>D:/Projects/BCAICOS_SME/temp/</condir.path>
+			<special.cond.report.path>D:/Projects/BcaICOS_SME/iCOSSME/iCos/report/pdf/</special.cond.report.path>
+			<pk.upload.path>D:/Projects/ICOS-SME/upload/</pk.upload.path>
+		<mis>
+			<data.relasi>http://10.7.4.97:80/ReportServer/Pages/ReportViewer.aspx?%2fWEB%2fintegrasi_doc_ao%2fmyReport_data_customer_dev</data.relasi>
+			<data.relasi.json>http://10.20.215.10:8201/red-flag/individu-organization</data.relasi.json>
+			<data.redflag.property>http://10.7.4.97:80/ReportServer/Pages/ReportViewer.aspx?/WEB/integrasi_doc_ao/rf_properti</data.redflag.property>
+		</mis>
+		</report>
+		<dateformat>
+			<java1>dd-MMM-yyyy</java1>
+			<java2>dd/MM/yyyy HH:mm:ss</java2>
+			<java3>dd-MMM-yyyy HH:mm:ss</java3>
+			<java4>dd/MM/yyyy</java4>
+			<oracle1>DD/MM/YYYY</oracle1>
+			<oracle2>DD/MM/YYYY HH24:MI:ss</oracle2>
+			<oracle3>dd-Mon-yyyy hh24:mi</oracle3>
+			<oracle4>DD-Mon-YYYY HH:MI AM</oracle4>
+			<oracle5>dd-Mon-yyyy</oracle5>
+			<oracle6>Mon dd, yyyy  HH24:MI:ss AM</oracle6>
+			<oracle7>YYYY/MM/DD</oracle7>
+		</dateformat>
+		<email>
+			<smtp.addr>10.20.200.220</smtp.addr>
+			<smtp.port>25</smtp.port>
+			<timeout>200000</timeout>
+			<conn.timeout>200000</conn.timeout>
+			<recipient></recipient>
+			<sender.email.addr>icossme-noreply@dti.co.id</sender.email.addr>
+			<pic.it></pic.it>
+		</email>
+		<workflow>
+			<pengalihan.role>&#39;ADVISOR_ARK&#39;, &#39;ANALIS&#39;, &#39;AO&#39;, &#39;BM&#39;, &#39;DBM&#39;, &#39;DISB_APPROVER&#39;, &#39;DISB_STAFF&#39;, &#39;DISB_VERIFIER&#39;, &#39;IR_REVIEWER&#39;, &#39;IR_STAFF&#39;, &#39;KADIV_DBKM&#39;, &#39;KEPALA_SKW&#39;, &#39;RM&#39;, &#39;MARKETING_DIREKTOR&#39;, &#39;PK_REVIEWER1&#39;, &#39;PK_REVIEWER2&#39;, &#39;PK_STAFF&#39;, &#39;PK_TA&#39;, &#39;HEAD_AO&#39;, &#39;SENIOR_ADVISOR_ARK&#39;, &#39;SENIOR_ANALIS&#39;, &#39;SPPK_REVIEWER&#39;, &#39;SPPK_STAFF&#39;, &#39;STA&#39;, &#39;WAKADIV_DBKM&#39;, &#39;RO&#39;, &#39;RO_HEAD&#39;, &#39;KEPALA_SBK&#39;</pengalihan.role>
+			<enable.notification.email>N</enable.notification.email>
+		</workflow>
+		<mandatory>
+			<delimiter>,</delimiter>
+			<main>
+				<edosir>
+					<id.nasabah>
+						<field>FILE_PATH</field>
+						<table>SME_APP_SUPDOCD</table>
+						<innerjoin></innerjoin>
+						<where>SUPDOCH_ID</where>
+						<data.field>File</data.field>
+						<data.lokasi>e-Dosir >> Dokumen Pendukung Umum</data.lokasi>
+						<data.target>/bca/action/edosir.do?task=openDokUmumDT</data.target>
+					</id.nasabah>
+					<id.pengurus>
+						<field>FILE_PATH</field>
+						<table>SME_APP_SUPDOCD</table>
+						<innerjoin></innerjoin>
+						<where>SUPDOCH_ID</where>
+						<data.field>File</data.field>
+						<data.lokasi>e-Dosir >> Dokumen Pendukung Umum</data.lokasi>
+						<data.target>/bca/action/edosir.do?task=openDokUmumDT</data.target>
+					</id.pengurus>
+					<dok.agunan>
+						<field>FILE_PATH</field>
+						<table>SME_APP_SUPDOCD</table>
+						<innerjoin></innerjoin>
+						<where>SUPDOCH_ID</where>
+						<data.field>File</data.field>
+						<data.lokasi>e-Dosir >> Dokumen Pendukung Agunan</data.lokasi>
+						<data.target>/bca/action/edosir.do?task=openDokAgunanDT</data.target>
+					</dok.agunan>
+				</edosir>
+				<jenis.memo>
+					<field>CREDIT_MEMO_TYPE_CD,DATE_CREDIT_MEMO,BRANCH_CD,DATE_APPLIED,PURPOSE,IS_BCAPROHIBITED_LIST,IS_CASH_COVERED,IS_COOPERATION_PROG</field>
+					<table>SME_APP</table>
+					<innerjoin></innerjoin>
+					<where>ID</where>
+					<data.field>Jenis Memo Kredit,Tanggal Memo Sekarang,Cabang Pengolahan,Tanggal Permohonan,Tujuan Permohonan,Dalam Daftar Larangan BI/BCA?,100% Cash Covered,Program Kerjasama</data.field>
+					<data.lokasi>Jenis Memo</data.lokasi>
+					<data.target>/bca/action/jenismemodocgen.do?task=initPage</data.target>
+				</jenis.memo>
+				<data.debitur>
+					<field.ind>CUST_ID,MOTHER_MAIDEN,TYPE_OF_LEGAL_ENTITIES_CD,NAME_OF_OWNER,ID_NO,CITIZENSHIP_CD,BCA_COM_SECTOR_CD,DATE_REG,BCA_ACC_NO,TAX_ID_NO,MARITAL_STATUS_CD,BCA_ECO_SECTOR_CD,BI_ECO_SECTOR_CD,CREDIT_CAT_CD,BIZ_ADDR_LINE1,BIZ_KECAMATAN,BIZ_KELURAHAN,BIZ_CITY_CD,CONTACT_NAME,PHONE_NO,MOBILE_NO,BCA_DEBTOR_SINCE,JOB_POS_CD,JML_TANGGUNGAN</field.ind>
+					<field.ind.mar>CUST_ID,MOTHER_MAIDEN,TYPE_OF_LEGAL_ENTITIES_CD,NAME_OF_OWNER,ID_NO,CITIZENSHIP_CD,BCA_COM_SECTOR_CD,DATE_REG,BCA_ACC_NO,TAX_ID_NO,MARITAL_STATUS_CD,BCA_ECO_SECTOR_CD,BI_ECO_SECTOR_CD,CREDIT_CAT_CD,BIZ_ADDR_LINE1,BIZ_KECAMATAN,BIZ_KELURAHAN,BIZ_CITY_CD,CONTACT_NAME,PHONE_NO,MOBILE_NO,BCA_DEBTOR_SINCE,JOB_POS_CD, SPOUSE_NAME,SPOUSE_ID_NO,SPOUSE_BIRTH_DATE,IS_PISAH_HARTA,JML_TANGGUNGAN</field.ind.mar>
+					<field.org>CUST_ID,TYPE_OF_LEGAL_ENTITIES_CD,NAME_OF_OWNER,ID_NO,CITIZENSHIP_CD,BCA_COM_SECTOR_CD,DATE_REG,BCA_ACC_NO,TAX_ID_NO,MARITAL_STATUS_CD,BCA_ECO_SECTOR_CD,BI_ECO_SECTOR_CD,CREDIT_CAT_CD,BIZ_ADDR_LINE1,BIZ_KECAMATAN,BIZ_KELURAHAN,BIZ_CITY_CD,CONTACT_NAME,PHONE_NO,MOBILE_NO,BCA_DEBTOR_SINCE,JOB_POS_CD</field.org>
+					<table>SME_APP_CUST</table>
+					<innerjoin></innerjoin>
+					<where>APP_ID</where>
+					<data.field.ind>Nama Debitur / Calon Debitur,Nama Gadis Ibu Kandung,Bentuk Badan Hukum Debitur,Nama Pemilik,No Paspor / KTP,Status Kewarganegaraan / Residen,Jenis Industri,Tanggal Pendirian,No Rekening BCA,No NPWP,Status Perkawinan,Sektor Ekonomi BCA,Sektor Ekonomi BI,Kategori Kredit,Nama Jalan,Kecamatan,Kelurahan,Kota,Nama Kontak Utama BCA,No Telepon Kantor,No HP,Menjadi Debitur BCA sejak,Jabatan,Jumlah Tanggungan</data.field.ind>
+					<data.field.ind.mar>Nama Debitur / Calon Debitur,Nama Gadis Ibu Kandung,Bentuk Badan Hukum Debitur,Nama Pemilik,No Paspor / KTP,Status Kewarganegaraan / Residen,Jenis Industri,Tanggal Pendirian,No Rekening BCA,No NPWP,Status Perkawdinan,Sektor Ekonomi BCA,Sektor Ekonomi BI,Kategori Kredit,Nama Jalan,Kecamatan,Kelurahan,Kota,Nama Kontak Utama BCA,No Telepon Kantor,No HP,Menjadi Debitur BCA sejak,Jabatan,Nama Pasangan,No KTP Pasangan,Tanggal Lahir Pasangan,Perjanjian Pisah Harta,Jumlah Tanggungan</data.field.ind.mar>
+					<data.field.org>Nama Debitur / Calon Debitur,Bentuk Badan Hukum Debitur,Nama Pemilik (bila Bukan Debitur),No Paspor / KTP,Status Kewarganegaraan / Residen,Bidang Usaha,Tanggal Pendirian,No Rekening BCA,No NPWP,Status Perkawinan,Sektor Ekonomi BCA,Sektor Ekonomi BI,Kategori Kredit,Nama Jalan,Kecamatan,Kelurahan,Kota,Nama Kontak Utama BCA,No Telepon Kantor,No HP,Menjadi Debitur BCA sejak,Jabatan</data.field.org>
+					<data.lokasi>Data Debitur</data.lokasi>
+					<data.target>/bca/action/datadebitur.do?task=initPage</data.target>
+				</data.debitur>
+				<fasilitas>
+					<field>ID</field>
+					<table>SME_APP_FAC</table>
+					<innerjoin></innerjoin>
+					<where>APP_ID</where>
+					<data.field>Fasilitas</data.field>
+					<data.lokasi>Rincian Pinjaman >> Fasilitas</data.lokasi>
+					<data.target>/bca/action/fasilitasbaru.do?task=initPage</data.target>
+				</fasilitas>
+				<per.fasilitas>
+					<field>ID,BOOKING_BRANCH_CD</field>
+					<table>SME_APP_FAC</table>
+					<innerjoin></innerjoin>
+					<where>ID</where>
+					<data.field>ID,Cabang Pemilik Rekening</data.field>
+					<data.lokasi>Rincian Pinjaman >> Fasilitas</data.lokasi>
+					<data.target>/bca/action/fasilitasbaru.do?task=openDetailRincianPinjamanBca</data.target>
+				</per.fasilitas>
+				<ringkasan.agunan>
+					<field>col.ID,col.COL_STATUS_CD,col.CURRENCY_CD,col.EXC_RATE,col.WHOLE_MARKET_VALUE,col.MARKET_VALUE,col.FORCED_VALUE,col.PLEDGE_VALUE,col.INS_SUMMARY_CD,col.JENIS_PEMILIK_CD, col.KETERSEDIAAN_JAMINAN</field>										
+					<field.nonketersediaanagunan>col.ID,col.COL_STATUS_CD,col.CURRENCY_CD,col.EXC_RATE,col.WHOLE_MARKET_VALUE,col.MARKET_VALUE,col.FORCED_VALUE,col.PLEDGE_VALUE,col.INS_SUMMARY_CD,col.JENIS_PEMILIK_CD</field.nonketersediaanagunan>										
+					<table>SME_APP_COL col</table>
+					<innerjoin></innerjoin>
+					<where>col.ID</where>
+					<data.field>ID,Status,Mata Uang,Kurs Agunan,Nilai Pasar Agunan,Nilai Agunan yang Dijaminkan,Nilai Taksasi,Nilai Pengikatan,Hak Pertanggungan,Jenis Pemilik,Ketersediaan Agunan</data.field>
+					<data.field.nonketersediaanagunan>ID,Status,Mata Uang,Kurs Agunan,Nilai Pasar Agunan,Nilai Agunan yang Dijaminkan,Nilai Taksasi,Nilai Pengikatan,Hak Pertanggungan,Jenis Pemilik</data.field.nonketersediaanagunan>
+					<data.lokasi>Rincian Pinjaman >> Agunan</data.lokasi>
+					<data.target>/bca/action/agunan.do?task=initPage</data.target>
+				</ringkasan.agunan>
+				<per.ringkasan.agunan>
+					<data.target>/bca/action/agunan.do?task=openDetail</data.target>
+				</per.ringkasan.agunan>
+				<pengkaitan>
+					<data.lokasi>Rincian Pinjaman >> Pengkaitan</data.lokasi>
+					<data.target>/bca/action/pengkaitan.do?task=initPage</data.target>
+				</pengkaitan>
+				<jaminan.pg>
+					<field>IS_OWNER_GUARANTEE</field>
+					<field.terjamin>NAMA_PENJAMIN,ID_NO_PENJAMIN</field.terjamin>
+					<table>SME_APP</table>
+					<innerjoin></innerjoin>
+					<where>ID</where>
+					<data.field>Jaminan/PG dari Pemilik?</data.field>
+					<data.field.terjamin>Nama Sesuai Identitas,No Identitas Penjamin</data.field.terjamin>
+					<data.lokasi>Rincian Pinjaman >> Agunan</data.lokasi>
+					<data.target>/bca/action/agunan.do?task=initPage</data.target>
+				</jaminan.pg>
+				<data.keuangan>
+					<field>BIZ_ACC_CD,FIN_STATE_COND_CD,CURR_AVG_MONTHLY_DEPOSIT,PREV_AVG_MONTHLY_DEPOSIT,CURR_MONTHLY_TOTAL_SALE,CURR_YEARLY_TOTAL_SALE,PROJ_MONTHLY_TOTAL_SALE,PROJ_YEARLY_TOTAL_SALE,CURR_COST_GOODS_SOLD_PERCENT,CURR_COST_GOODS_SOLD,PROJ_COST_GOODS_SOLD_PERCENT,PROJ_COST_GOODS_SOLD,CURR_OPERATION_COST_PERCENT,CURR_OPERATION_COST, PROJ_OPERATION_COST_PERCENT,PROJ_OPERATION_COST,CURR_DEPRECIATION_PERCENT,CURR_DEPRECIATION,PROJ_DEPRECIATION_PERCENT,PROJ_DEPRECIATION,CURR_INTEREST_EXPENSE_PERCENT,CURR_INTEREST_EXPENSE,PROJ_INTEREST_EXPENSE_PERCENT,PROJ_INTEREST_EXPENSE,CURR_OTHER_EXPENSE_PERCENT,CURR_OTHER_EXPENSE,PROJ_OTHER_EXPENSE_PERCENT,PROJ_OTHER_EXPENSE,CURR_OTHER_INCOME_PERCENT,CURR_OTHER_INCOME,PROJ_OTHER_INCOME_PERCENT,PROJ_OTHER_INCOME,CURR_GROSS_PROFIT_PERCENT,CURR_GROSS_PROFIT,PROJ_GROSS_PROFIT_PERCENT,PROJ_GROSS_PROFIT,CURR_INCOME_TAX_PERCENT,CURR_INCOME_TAX,PROJ_INCOME_TAX_PERCENT,PROJ_INCOME_TAX,CURR_BD_INTEREST_EXPENSE,PROJ_BD_INTEREST_EXPENSE,CURR_CASH_IN_MONTH,CURR_CASH,PROJ_CASH_IN_MONTH,PROJ_CASH,CURR_ACC_RECV_IN_MONTH,CURR_ACC_RECV,PROJ_ACC_RECV_IN_MONTH,PROJ_ACC_RECV,CURR_INVENTORY_IN_MONTH,CURR_INVENTORY,PROJ_INVENTORY_IN_MONTH,PROJ_INVENTORY,CURR_ACC_PAYABLE_IN_MONTH,CURR_ACC_PAYABLE,PROJ_ACC_PAYABLE_IN_MONTH,PROJ_ACC_PAYABLE,PROJ_CMT,COLLECTIBILITY_CD</field>
+					<table>SME_APP_FIN_STMT fin,SME_APP app</table>
+					<innerjoin>fin.APP_ID=app.ID</innerjoin>
+					<where>fin.APP_ID</where>
+					<!--<data.field>Rekening Koran,Laporan Keuangan,Rata-rata Penyetoran / bln (Tahun ini),Rata-rata Penyetoran / bln (Tahun Lalu),Komentar Aktivitas Rekening Koran,Penjualan (Jutaan IDR) (Saat ini - Bulanan),Penjualan (Jutaan IDR) (Saat ini - Tahunan),Penjualan (Jutaan IDR) (Proyeksi - Bulanan),Penjualan (Jutaan IDR) (Proyeksi - Tahunan),Harga Pokok Produksi (Saat ini - %),Harga Pokok Produksi (Saat ini - Jutaan IDR),Harga Pokok Produksi (Proyeksi - %),Harga Pokok Produksi (Proyeksi - Jutaan IDR),Biaya Operasional (Saat ini - %),Biaya Operasional (Saat ini - Jutaan IDR),Biaya Operasional (Proyeksi - %),Biaya Operasional (Proyeksi - Jutaan IDR),Depresiasi (Saat ini - %),Depresiasi (Saat ini - Jutaan IDR),Depresiasi (Proyeksi - %),Depresiasi (Proyeksi - Jutaan IDR),Beban Bunga / Komisi (Saat ini - %),Beban Bunga / Komisi (Saat ini - Jutaan IDR),Beban Bunga / Komisi (Proyeksi - %),Beban Bunga / Komisi (Proyeksi - Jutaan IDR),Biaya Lainnya (Saat ini - %),Biaya Lainnya (Saat ini - Jutaan IDR),Biaya Lainnya (Proyeksi - %),Biaya Lainnya (Proyeksi - Jutaan IDR),Penghasilan Lainnya (Saat ini - %),Penghasilan Lainnya (Saat ini - Jutaan IDR),Penghasilan Lainnya (Proyeksi - %),Penghasilan Lainnya (Proyeksi - Jutaan IDR),Laba Bersih Sebelum Pajak (Saat ini - %),Laba Bersih Sebelum Pajak (Saat ini - Jutaan IDR),Laba Bersih Sebelum Pajak (Proyeksi - %),Laba Bersih Sebelum Pajak (Proyeksi - Jutaan IDR),Pajak Penghasilan (Saat ini - %),Pajak Penghasilan (Saat ini - Jutaan IDR),Pajak Penghasilan (Proyeksi - %),Pajak Penghasilan (Proyeksi - Jutaan IDR),Beban Bunga / Komisi (Saat ini - Jutaan IDR),Beban Bunga / Komisi (Proyeksi - Jutaan IDR),Persediaan Uang Kas (Saat ini - Periode),Persediaan Uang Kas (Saat ini - Jutaan IDR),Persediaan Uang Kas (Proyeksi - Periode),Persediaan Uang Kas (Proyeksi - Jutaan IDR),Piutang Dagang (Saat ini - Periode),Piutang Dagang (Saat ini - Jutaan IDR),Piutang Dagang (Proyeksi - Periode),Piutang Dagang (Proyeksi - Jutaan IDR),Persediaan Barang (Saat ini - Periode),Persediaan Barang (Saat ini - Jutaan IDR),Persediaan Barang (Proyeksi - Periode),Persediaan Barang (Proyeksi - Jutaan IDR),Hutang Dagang (Saat ini - Periode),Hutang Dagang (Saat ini - Jutaan IDR),Hutang Dagang (Proyeksi - Periode),Hutang Dagang (Proyeksi - Jutaan IDR),Komentar Proyeksi,Kolektibilitas</data.field>-->
+					<data.field>Rekening Koran,Laporan Keuangan,Rata-rata Penyetoran / bln (Tahun ini),Rata-rata Penyetoran / bln (Tahun Lalu),Penjualan (Jutaan IDR) (Saat ini - Bulanan),Penjualan (Jutaan IDR) (Saat ini - Tahunan),Penjualan (Jutaan IDR) (Proyeksi - Bulanan),Penjualan (Jutaan IDR) (Proyeksi - Tahunan),Harga Pokok Produksi (Saat ini - %),Harga Pokok Produksi (Saat ini - Jutaan IDR),Harga Pokok Produksi (Proyeksi - %),Harga Pokok Produksi (Proyeksi - Jutaan IDR),Biaya Operasional (Saat ini - %),Biaya Operasional (Saat ini - Jutaan IDR),Biaya Operasional (Proyeksi - %),Biaya Operasional (Proyeksi - Jutaan IDR),Depresiasi (Saat ini - %),Depresiasi (Saat ini - Jutaan IDR),Depresiasi (Proyeksi - %),Depresiasi (Proyeksi - Jutaan IDR),Beban Bunga / Komisi (Saat ini - %),Beban Bunga / Komisi (Saat ini - Jutaan IDR),Beban Bunga / Komisi (Proyeksi - %),Beban Bunga / Komisi (Proyeksi - Jutaan IDR),Biaya Lainnya (Saat ini - %),Biaya Lainnya (Saat ini - Jutaan IDR),Biaya Lainnya (Proyeksi - %),Biaya Lainnya (Proyeksi - Jutaan IDR),Penghasilan Lainnya (Saat ini - %),Penghasilan Lainnya (Saat ini - Jutaan IDR),Penghasilan Lainnya (Proyeksi - %),Penghasilan Lainnya (Proyeksi - Jutaan IDR),Laba Bersih Sebelum Pajak (Saat ini - %),Laba Bersih Sebelum Pajak (Saat ini - Jutaan IDR),Laba Bersih Sebelum Pajak (Proyeksi - %),Laba Bersih Sebelum Pajak (Proyeksi - Jutaan IDR),Pajak Penghasilan (Saat ini - %),Pajak Penghasilan (Saat ini - Jutaan IDR),Pajak Penghasilan (Proyeksi - %),Pajak Penghasilan (Proyeksi - Jutaan IDR),Beban Bunga / Komisi (Saat ini - Jutaan IDR),Beban Bunga / Komisi (Proyeksi - Jutaan IDR),Persediaan Uang Kas (Saat ini - Periode),Persediaan Uang Kas (Saat ini - Jutaan IDR),Persediaan Uang Kas (Proyeksi - Periode),Persediaan Uang Kas (Proyeksi - Jutaan IDR),Piutang Dagang (Saat ini - Periode),Piutang Dagang (Saat ini - Jutaan IDR),Piutang Dagang (Proyeksi - Periode),Piutang Dagang (Proyeksi - Jutaan IDR),Persediaan Barang (Saat ini - Periode),Persediaan Barang (Saat ini - Jutaan IDR),Persediaan Barang (Proyeksi - Periode),Persediaan Barang (Proyeksi - Jutaan IDR),Hutang Dagang (Saat ini - Periode),Hutang Dagang (Saat ini - Jutaan IDR),Hutang Dagang (Proyeksi - Periode),Hutang Dagang (Proyeksi - Jutaan IDR),Komentar Proyeksi,Kolektibilitas</data.field>
+					<data.lokasi>Data Pendukung >> Data Keuangan</data.lokasi>
+					<data.target>/bca/action/datakeuangan.do?task=initPage</data.target>
+				</data.keuangan>
+				<external.exposure>
+					<data.lokasi>Data Pendukung >> Eksternal Eksposure</data.lokasi>
+					<data.target>/bca/action/eksternaleksposure.do?task=initPage</data.target>
+				</external.exposure>
+				<data.manajemen>
+					<field>BIZ_EXPE_CD,LOC_REPU_CD,REL_EMP_CD,REL_BANK_CD</field>
+					<table>SME_APP_CUST_MGMT</table>
+					<innerjoin></innerjoin>
+					<where>APP_ID</where>
+					<!--<data.field>Pengalaman Usaha,Komentar Pengalaman Usaha,Reputasi Lokal,Komentar Reputasi Lokal,Hubungan dengan Karyawan, Komentar Hubungan dengan Karyawan,Hubungan dengan Bank,Komentar Hubungan dengan Bank</data.field>-->
+					<data.field>Pengalaman Usaha,Reputasi Lokal,Hubungan dengan Karyawan,Hubungan dengan Bank</data.field>
+					<data.lokasi>Data Pendukung >> Data Manajemen</data.lokasi>
+					<data.target>/bca/action/datamanajemen.do?task=initPage</data.target>
+				</data.manajemen>
+				<analisa.industri>
+					<field>PROS_FUTURE_CD,PROD_QUALITY_CD,CUST_CONCENT_CD,FOREX_EXPOSURE_CD,TRADE_CHECKING_CD</field>
+					<table>SME_APP_INDUSTRY_ANALYSIS</table>
+					<innerjoin></innerjoin>
+					<where>APP_ID</where>
+					<!--<data.field>Prospek Bisnis di Masa Mendatang,Komentar Prospek Bisnis di Masa Mendatang,Kualitas Produk / Posisi di Pasar,Komentar Kualitas Produk / Posisi di Pasar,Konsentrasi Pemasok / Pelanggan,Komentar Konsentrasi Pemasok / Pelanggan,Forex Eksposur,Komentar Forex Eksposur,Trade Checking,Komentar Trade Checking</data.field>-->
+					<data.field>Prospek Bisnis di Masa Mendatang,Kualitas Produk / Posisi di Pasar,Konsentrasi Pemasok / Pelanggan,Forex Eksposur,Trade Checking</data.field>
+					<data.lokasi>Data Pendukung >> Analisa Industri</data.lokasi>
+					<data.target>/bca/action/analisaindustri.do?task=initPage</data.target>
+				</analisa.industri>
+				<dokumentasi>
+					<field>DOC_COMPL_CD,SPOUSE_CONSE_CD</field>
+					<table>SME_APP_DOC</table>
+					<innerjoin></innerjoin>
+					<where>APP_ID</where>
+					<!--<data.field>Kelengkapan Dokumen,Komentar Kelengkapan Dokumen,Persetujuan dari Suami / Istri,Komentar Persetujuan dari Suami / Istri</data.field>-->
+					<data.field>Kelengkapan Dokumen,Komentar Kelengkapan Dokumen</data.field>
+					<data.lokasi>Data Pendukung >> Dokumentasi</data.lokasi>
+					<data.target>/bca/action/dokumentasi.do?task=initPage</data.target>
+				</dokumentasi>
+			</main>
+			<simulasi>
+				<jenis.memo>
+					<field>CREDIT_MEMO_TYPE_CD,DATE_CREDIT_MEMO,BRANCH_CD,DATE_APPLIED,PURPOSE,IS_BCAPROHIBITED_LIST,IS_CASH_COVERED</field>
+					<table>SIM_SME_APP</table>
+					<innerjoin></innerjoin>
+					<where>ID</where>
+				</jenis.memo>
+				<fasilitas>
+					<field>ID</field>
+					<table>SIM_SME_APP_FAC</table>
+					<innerjoin></innerjoin>
+					<where>APP_ID</where>
+				</fasilitas>
+				<per.fasilitas>
+					<field>ID,BOOKING_BRANCH_CD</field>
+					<table>SIM_SME_APP_FAC</table>
+					<innerjoin></innerjoin>
+					<where>ID</where>
+				</per.fasilitas>
+				<ringkasan.agunan>
+					<field>col.ID,col.COL_STATUS_CD,col.CURRENCY_CD,col.EXC_RATE,col.WHOLE_MARKET_VALUE,col.MARKET_VALUE,col.FORCED_VALUE,col.PLEDGE_VALUE,col.INS_SUMMARY_CD,col.COL_QUALITY_CD,col.JENIS_PEMILIK_CD</field>
+					<table>SIM_SME_APP_COL col</table>
+					<innerjoin></innerjoin>
+					<where>col.ID</where>
+				</ringkasan.agunan>
+				<jaminan.pg>
+					<field>IS_OWNER_GUARANTEE</field>
+					<table>SIM_SME_APP</table>
+					<innerjoin></innerjoin>
+					<where>ID</where>
+				</jaminan.pg>
+				<data.keuangan>
+					<!-- <field>ID,APP_ID,BIZ_ACC_CD,FIN_STATE_COND_CD,CURR_AVG_MONTHLY_DEPOSIT,PREV_AVG_MONTHLY_DEPOSIT,ACC_ACT_CMT,CURR_MONTHLY_TOTAL_SALE,CURR_YEARLY_TOTAL_SALE,PROJ_MONTHLY_TOTAL_SALE,PROJ_YEARLY_TOTAL_SALE,CURR_COST_GOODS_SOLD_PERCENT,CURR_COST_GOODS_SOLD,PROJ_COST_GOODS_SOLD_PERCENT,PROJ_COST_GOODS_SOLD,CURR_OPERATION_COST_PERCENT,CURR_OPERATION_COST, PROJ_OPERATION_COST_PERCENT,PROJ_OPERATION_COST,CURR_DEPRECIATION_PERCENT,CURR_DEPRECIATION,PROJ_DEPRECIATION_PERCENT,PROJ_DEPRECIATION,CURR_INTEREST_EXPENSE_PERCENT,CURR_INTEREST_EXPENSE,PROJ_INTEREST_EXPENSE_PERCENT,PROJ_INTEREST_EXPENSE,CURR_OTHER_EXPENSE_PERCENT,CURR_OTHER_EXPENSE,PROJ_OTHER_EXPENSE_PERCENT,PROJ_OTHER_EXPENSE,CURR_OTHER_INCOME_PERCENT,CURR_OTHER_INCOME,PROJ_OTHER_INCOME_PERCENT,PROJ_OTHER_INCOME,CURR_GROSS_PROFIT_PERCENT,CURR_GROSS_PROFIT,PROJ_GROSS_PROFIT_PERCENT,PROJ_GROSS_PROFIT,CURR_INCOME_TAX_PERCENT,CURR_INCOME_TAX,PROJ_INCOME_TAX_PERCENT,PROJ_INCOME_TAX,CURR_BD_INTEREST_EXPENSE,PROJ_BD_INTEREST_EXPENSE,CURR_CASH_IN_MONTH,CURR_CASH,PROJ_CASH_IN_MONTH,PROJ_CASH,CURR_ACC_RECV_IN_MONTH,CURR_ACC_RECV,PROJ_ACC_RECV_IN_MONTH,PROJ_ACC_RECV,CURR_INVENTORY_IN_MONTH,CURR_INVENTORY,PROJ_INVENTORY_IN_MONTH,PROJ_INVENTORY,CURR_ACC_PAYABLE_IN_MONTH,CURR_ACC_PAYABLE,PROJ_ACC_PAYABLE_IN_MONTH,PROJ_ACC_PAYABLE</field>-->
+					<!--<table>SIM_SME_APP_FIN_STMT</table>
+					<innerjoin></innerjoin>
+					<where>APP_ID</where> -->
+					<field>BIZ_ACC_CD,FIN_STATE_COND_CD,CURR_AVG_MONTHLY_DEPOSIT,PREV_AVG_MONTHLY_DEPOSIT,CURR_MONTHLY_TOTAL_SALE,CURR_YEARLY_TOTAL_SALE,PROJ_MONTHLY_TOTAL_SALE,PROJ_YEARLY_TOTAL_SALE,CURR_COST_GOODS_SOLD_PERCENT,CURR_COST_GOODS_SOLD,PROJ_COST_GOODS_SOLD_PERCENT,PROJ_COST_GOODS_SOLD,CURR_OPERATION_COST_PERCENT,CURR_OPERATION_COST, PROJ_OPERATION_COST_PERCENT,PROJ_OPERATION_COST,CURR_DEPRECIATION_PERCENT,CURR_DEPRECIATION,PROJ_DEPRECIATION_PERCENT,PROJ_DEPRECIATION,CURR_INTEREST_EXPENSE_PERCENT,CURR_INTEREST_EXPENSE,PROJ_INTEREST_EXPENSE_PERCENT,PROJ_INTEREST_EXPENSE,CURR_OTHER_EXPENSE_PERCENT,CURR_OTHER_EXPENSE,PROJ_OTHER_EXPENSE_PERCENT,PROJ_OTHER_EXPENSE,CURR_OTHER_INCOME_PERCENT,CURR_OTHER_INCOME,PROJ_OTHER_INCOME_PERCENT,PROJ_OTHER_INCOME,CURR_GROSS_PROFIT_PERCENT,CURR_GROSS_PROFIT,PROJ_GROSS_PROFIT_PERCENT,PROJ_GROSS_PROFIT,CURR_INCOME_TAX_PERCENT,CURR_INCOME_TAX,PROJ_INCOME_TAX_PERCENT,PROJ_INCOME_TAX,CURR_BD_INTEREST_EXPENSE,PROJ_BD_INTEREST_EXPENSE,CURR_CASH_IN_MONTH,CURR_CASH,PROJ_CASH_IN_MONTH,PROJ_CASH,CURR_ACC_RECV_IN_MONTH,CURR_ACC_RECV,PROJ_ACC_RECV_IN_MONTH,PROJ_ACC_RECV,CURR_INVENTORY_IN_MONTH,CURR_INVENTORY,PROJ_INVENTORY_IN_MONTH,PROJ_INVENTORY,CURR_ACC_PAYABLE_IN_MONTH,CURR_ACC_PAYABLE,PROJ_ACC_PAYABLE_IN_MONTH,PROJ_ACC_PAYABLE,PROJ_CMT,COLLECTIBILITY_CD</field>
+					<table>SIM_SME_APP_FIN_STMT fin,SIM_SME_APP app</table>
+					<innerjoin>fin.APP_ID=app.ID</innerjoin>
+					<where>fin.APP_ID</where>
+				</data.keuangan>
+				<data.manajemen>
+					<!-- <field>ID,APP_ID,BIZ_EXPE_CD,BIZ_EXPE_CMT,LOC_REPU_CD,LOC_REPU_CMT,REL_EMP_CD,REL_EMP_CMT,REL_BANK_CD,REL_BANK_CMT</field> -->
+					<field>BIZ_EXPE_CD,LOC_REPU_CD,REL_EMP_CD,REL_BANK_CD</field>
+					<table>SIM_SME_APP_CUST_MGMT</table>
+					<innerjoin></innerjoin>
+					<where>APP_ID</where>
+				</data.manajemen>
+				<analisa.industri>
+					<!-- <field>ID,APP_ID,PROS_FUTURE_CD,PROS_FUTURE_CMT,PROD_QUALITY_CD,PROD_QUALITY_CMT,CUST_CONCENT_CD,CUST_CONCENT_CMT,FOREX_EXPOSURE_CD,FOREX_EXPOSURE_CMT,TRADE_CHECKING_CD,TRADE_CHECKING_CMT</field> -->
+					<field>PROS_FUTURE_CD,PROD_QUALITY_CD,CUST_CONCENT_CD,FOREX_EXPOSURE_CD,TRADE_CHECKING_CD</field>
+					<table>SIM_SME_APP_IND_ANAL</table>
+					<innerjoin></innerjoin>
+					<where>APP_ID</where>
+				</analisa.industri>
+				<dokumentasi>
+					<!-- <field>ID,APP_ID,DOC_COMPL_CD,DOC_COMPL_CMT,SPOUSE_CONSE_CD,SPOUSE_CONSE_CMT</field> -->
+					<field>DOC_COMPL_CD,SPOUSE_CONSE_CD</field>
+					<table>SIM_SME_APP_DOC</table>
+					<innerjoin></innerjoin>
+					<where>APP_ID</where>
+				</dokumentasi>
+			</simulasi>
+		</mandatory>
+		<logging>
+			<app>
+				<general>
+					<category>ICOSSME_GENERAL</category>
+					<file>D:/Projects/ICOS-SME/Log/icossme_general.log</file>
+					<threshold>ALL</threshold>
+					<log.pattern>%d &lt;%t&gt; (%C{1}:%M:%L) - %m%n</log.pattern>
+					<console.pattern>%d (%C{1}:%M:%L) - %m%n</console.pattern>
+					<max.file.size>5MB</max.file.size>
+					<max.backup.index>10</max.backup.index>
+				</general>
+				<error>
+					<category>ICOSSME_ERROR</category>
+					<file>D:/Projects/ICOS-SME/Log/icossme_error.log</file>
+					<threshold>ERROR</threshold>
+					<log.pattern>%d &lt;%t&gt; (%C{1}:%M:%L) - %m%n</log.pattern>
+					<console.pattern>%d (%C{1}:%M:%L) - %m%n</console.pattern>
+					<max.file.size>5MB</max.file.size>
+					<max.backup.index>10</max.backup.index>
+				</error>
+				<user>
+					<category>ICOSSME_USER</category>
+					<file>D:/Projects/ICOS-SME/Log/icossme_user.log</file>
+					<threshold>ALL</threshold>
+					<log.pattern>%d &lt;%t&gt; %m%n</log.pattern>
+					<console.pattern>%d (%C{1}:%M:%L) - %m%n</console.pattern>
+					<max.file.size>5MB</max.file.size>
+					<max.backup.index>10</max.backup.index>
+				</user>
+				<ods.status>
+					<category>ICOSSME_ODSSTATUS</category>
+					<file>D:/Projects/ICOS-SME/Log/icossme_odsstatus.log</file>
+					<threshold>ALL</threshold>
+					<log.pattern>%d &lt;%t&gt; (%C{1}:%M:%L) - %m%n</log.pattern>
+					<console.pattern>%d (%C{1}:%M:%L) - %m%n</console.pattern>
+					<max.file.size>5MB</max.file.size>
+					<max.backup.index>10</max.backup.index>
+				</ods.status>
+				<performance.monitor>
+					<category>ICOSSME_PERFMON</category>
+					<file>D:/Projects/ICOS-SME/Log/icossme_perfmon.log</file>
+					<threshold>ALL</threshold>
+					<log.pattern>%d^%m%n</log.pattern>
+					<console.pattern>%d^%m%n</console.pattern>
+					<max.file.size>5MB</max.file.size>
+					<max.backup.index>10</max.backup.index>
+				</performance.monitor>
+			</app>
+			<od>
+				<category>OLDISB</category>
+				<file>D:/Projects/ICOS-SME/Log/oldisb.log</file>
+				<threshold>ALL</threshold>
+				<log.pattern>%d &lt;%t&gt; %p %c{2} (%C{1}:%M:%L) - %m%n</log.pattern>
+				<console.pattern>%d &lt;%t&gt; %p %c{2} (%C{1}:%M:%L) - %m%n</console.pattern>
+				<max.file.size>5MB</max.file.size>
+				<max.backup.index>10</max.backup.index>
+			</od>
+			<workflow>
+				<category>WFSHELL</category>
+				<file>D:/Projects/ICOS-SME/Log/wf.log</file>
+				<threshold>ALL</threshold>
+				<log.pattern>%d &lt;%t&gt; (%C{1}:%M:%L) - %m%n</log.pattern>
+				<console.pattern>%d &lt;%t&gt; (%C{1}:%M:%L) - %m%n</console.pattern>
+				<max.file.size>5MB</max.file.size>
+				<max.backup.index>10</max.backup.index>
+			</workflow>
+			<scoring>
+				<sme>
+					<category>SME_SCORING</category>
+					<file>D:/Projects/ICOS-SME/Log/sme_scoring.log</file>
+					<threshold>ALL</threshold>
+					<log.pattern>%d - %m%n</log.pattern>
+					<console.pattern>%d &lt;%t&gt; (%C{1}:%M:%L) - %m%n</console.pattern>
+					<max.file.size>5MB</max.file.size>
+					<max.backup.index>10</max.backup.index>
+				</sme>
+				<commercial>
+					<category>COMMERCIAL_SCORING</category>
+					<file>D:/Projects/ICOS-SME/Log/commercial_scoring.log</file>
+					<threshold>ALL</threshold>
+					<log.pattern>%d - %m%n</log.pattern>
+					<console.pattern>%d &lt;%t&gt; (%C{1}:%M:%L) - %m%n</console.pattern>
+					<max.file.size>5MB</max.file.size>
+					<max.backup.index>10</max.backup.index>
+				</commercial>
+				<rules>
+					<category>SCORING_RULES</category>
+					<file>D:/Projects/ICOS-SME/Log/scoring_rules.log</file>
+					<threshold>ALL</threshold>
+					<log.pattern>%d (%C{1}:%M:%L) - %m%n</log.pattern>
+					<console.pattern>%d (%C{1}:%M:%L) - %m%n</console.pattern>
+					<max.file.size>5MB</max.file.size>
+					<max.backup.index>10</max.backup.index>
+				</rules>
+			</scoring>
+		</logging>				
+		<miscopt>
+			<tasklist.mode>1</tasklist.mode>
+			<opsi.minimum.plafond.untuk.komersil>1</opsi.minimum.plafond.untuk.komersil>
+		</miscopt>
+		<edosir>
+			<view.mode>1</view.mode>
+			<!--<ras.path>D:/cd/bcaisme/EDOSIR</ras.path>-->
+			<ras.path>smb://10.20.201.101/ISME/EDOSIR</ras.path>
+			<ras.username>bcamaster</ras.username>
+			<ras.password>bca123!</ras.password>			
+			<ras.path.documentum>smb://10.20.212.101/ISME/BATCH_DOCUMENTUM/UPLOAD</ras.path.documentum>
+			<temp.file.path>/bcaisme/app/etc/tmp</temp.file.path>
+			<edoc.appId>WEB01EDOSIRICOS</edoc.appId>
+			<edoc.documentum.encKey>foxtrotgolfhotel</edoc.documentum.encKey>
+			<edoc.documentum.url.list>http://efiling:8261/web01/List.do</edoc.documentum.url.list>
+			<edoc.documentum.url.session>http://efiling:8261/web01/Session.do?guid=</edoc.documentum.url.session>
+			<ras.warning1.flag>Y</ras.warning1.flag>
+			<hcp.url>http://ns-digiloan.tn-eformkpr.devhcp01.dti.co.id</hcp.url>
+			<hcp.auth>HCP aWNvc19jb250cmlidXRvcg==:71ad6fa282aaeb93abfbf5b953b8816c</hcp.auth>
+			<!--<hcp.auth.prod>HCP aWNvc19jb250cmlidXRvcg==:75d3e5a735ac43b7e073034b1d969a50</hcp.auth.prod>-->
+		</edosir>
+	</icossme>
+	<bca.utility>
+		<logging>
+			<category>BCAUTIL</category>
+			<file>D:/Projects/ICOS-SME/Log/util.log</file>
+			<threshold>ALL</threshold>
+			<log.pattern>%d &lt;%t&gt; (%C{1}:%M:%L) - %m%n</log.pattern>
+			<console.pattern>%d (%C{1}:%M:%L) - %m%n</console.pattern>
+			<max.file.size>5MB</max.file.size>
+			<max.backup.index>10</max.backup.index>
+		</logging>
+	</bca.utility>
+	<ods>
+		<esb>
+			<provider.url>http://10.20.215.11:8603</provider.url>
+			<context.factory>weblogic.jndi.WLInitialContextFactory</context.factory>
+		</esb>
+		<logging>
+			<category>ODS</category>
+			<file>D:/Projects/ICOS-SME/Log/ods.log</file>
+			<threshold>DEBUG</threshold>
+			<log.pattern>%d (%r) %p.&lt;%t&gt; %m%n</log.pattern>
+			<console.pattern>%d %c{2}.%p.&lt;%t&gt; %m%n</console.pattern>
+			<max.file.size>5MB</max.file.size>
+			<max.backup.index>10</max.backup.index>
+		</logging>
+	</ods>
+	<esecure>
+		<etc>
+			<app.code>ESECURE</app.code>
+			<notification.msg></notification.msg>
+			<message.properties.path>D:/Projects/ICOS-SME/icos-smekom/config/bcaesec_msg.properties</message.properties.path>
+			<debug.logid>USEREAI~AOPJY1</debug.logid>
+		</etc>
+		<datasource>
+			<esecure>java:/ds_ICOSSME</esecure>
+		</datasource>
+		<esb>
+			<eai.ad>
+				<provider.url>t3://10.20.201.52:25001</provider.url>
+				<ldap.path>GC://10.20.201.35</ldap.path>
+				<app.id>PRJ1</app.id>
+				<encrypt.key>123456789012345678901234</encrypt.key>
+				<bypass.ad.auth>Y</bypass.ad.auth>
+			</eai.ad>
+		</esb>
+		<report>
+			<docgen>
+				<birt.processor.ejb.url>remote://10.20.212.129:4489</birt.processor.ejb.url>
+				<birt.processor.ejb.security.principal>ejbuser</birt.processor.ejb.security.principal>
+				<birt.processor.ejb.security.credentials>remote@123</birt.processor.ejb.security.credentials>		
+				<rptdesign.path>D:/Projects/ICOS-SME/eSecure/eSecure/report/rptdesign/</rptdesign.path>
+				<output.path>D:/Projects/ICOS-SME/eSecure/eSecure/report/pdf/</output.path>
+				<database.jdbc.class>oracle.jdbc.driver.OracleDriver</database.jdbc.class>
+				<database.url>jdbc:oracle:thin:@10.20.215.142:1526:dicossme</database.url>
+				<database.username>esecure</database.username>
+				<database.password>s3cur3</database.password>
+				<database.jndi.url>java:/ds_ICOSSME</database.jndi.url>
+			</docgen>
+		</report>
+		<dateformat>
+			<java1>dd-MMM-yyyy</java1>
+			<java2>dd/MM/yyyy HH:mm:ss</java2>
+			<java3>dd-MMM-yyyy HH:mm:ss</java3>
+			<oracle1>DD/MM/YYYY</oracle1>
+			<oracle2>DD/MM/YYYY HH24:MI:ss</oracle2>
+			<oracle3>dd-Mon-yyyy hh24:mi</oracle3>
+		</dateformat>
+		<logging>
+			<general>
+				<category>ESEC_GENERAL</category>
+				<file>D:/Projects/ICOS-SME/Log/esec_general.log</file>
+				<threshold>ALL</threshold>
+				<log.pattern>%d &lt;%t&gt; (%C{1}:%M:%L) - %m%n</log.pattern>
+				<console.pattern>%d (%C{1}:%M:%L) - %m%n</console.pattern>
+				<max.file.size>5MB</max.file.size>
+				<max.backup.index>10</max.backup.index>
+			</general>
+			<error>
+				<category>ESEC_ERROR</category>
+				<file>D:/Projects/ICOS-SME/Log/esec_error.log</file>
+				<threshold>ERROR</threshold>
+				<log.pattern>%d &lt;%t&gt; (%C{1}:%M:%L) - %m%n</log.pattern>
+				<console.pattern>%d (%C{1}:%M:%L) - %m%n</console.pattern>
+				<max.file.size>5MB</max.file.size>
+				<max.backup.index>10</max.backup.index>
+			</error>
+			<user>
+				<category>ESEC_USER</category>
+				<file>D:/Projects/ICOS-SME/Log/esec_user.log</file>
+				<threshold>ALL</threshold>
+				<log.pattern>%d &lt;%t&gt; %m%n</log.pattern>
+				<console.pattern>%d (%C{1}:%M:%L) - %m%n</console.pattern>
+				<max.file.size>5MB</max.file.size>
+				<max.backup.index>10</max.backup.index>
+			</user>
+		</logging>
+	</esecure>
+	<bca.wfe>
+		<datasource>
+			<bca.wfe>java:/ds_ICOSSME</bca.wfe>
+		</datasource>
+		<logging>
+			<debug>
+				<category>BCAWFE_DEBUG</category>
+				<file>D:/Projects/ICOS-SME/Log/bcawfe_debug.log</file>
+				<threshold>DEBUG</threshold>
+				<log.pattern>%d &lt;%t&gt; (%C{1}:%M:%L) - %m%n</log.pattern>
+				<console.pattern>%d (%C{1}:%M:%L) - %m%n</console.pattern>
+				<max.file.size>5MB</max.file.size>
+				<max.backup.index>10</max.backup.index>
+			</debug>
+			<info>
+				<category>BCAWFE_INFO</category>
+				<file>D:/Projects/ICOS-SME/Log/bcawfe_info.log</file>
+				<threshold>ALL</threshold>
+				<log.pattern>%d &lt;%t&gt; (%C{1}:%M:%L) - %m%n</log.pattern>
+				<console.pattern>%d (%C{1}:%M:%L) - %m%n</console.pattern>
+				<max.file.size>5MB</max.file.size>
+				<max.backup.index>10</max.backup.index>
+			</info>
+			<error>
+				<category>BCAWFE_ERROR</category>
+				<file>D:/Projects/ICOS-SME/Log/bcawfe_error.log</file>
+				<threshold>ERROR</threshold>
+				<log.pattern>%d &lt;%t&gt; %m%n</log.pattern>
+				<console.pattern>%d (%C{1}:%M:%L) - %m%n</console.pattern>
+				<max.file.size>5MB</max.file.size>
+				<max.backup.index>10</max.backup.index>
+			</error>
+		</logging>
+	</bca.wfe>
+	<batch.reports>
+		<etc>
+			<field.separator>;</field.separator>
+			<birt.engine.home>D:/Projects/ICOS-SME/BatchReports/lib/ReportEngine</birt.engine.home>
+			<ctrl-d.output.path>D:/Projects/ICOS-SME/textrpt/</ctrl-d.output.path>
+			<rptdesign.path>D:/Projects/ICOS-SME/icos-smekom/iCos/report/rptdesign/</rptdesign.path>
+			<pdf.output.path>D:/Projects/ICOS-SME/icos-smekom/iCos/report/pdf/</pdf.output.path>
+			<param1>2</param1>
+			<param2>2</param2>
+			<param3>2</param3>
+			<excluded.reports>PKK01;PKK02;PKK03;RKK1;RKK2;RKK3;</excluded.reports>
+		</etc>
+		<database>
+			<driver.class>oracle.jdbc.driver.OracleDriver</driver.class>
+			<url>jdbc:oracle:thin:@10.20.215.142:1526:dicossme</url>
+			<username>esecure</username>
+			<password>s3cur3</password>
+			<datasource.jndi>java:/ds_ICOSSME</datasource.jndi>
+		</database>
+		<logging>
+			<category>BATCH_REPORTS</category>
+			<file>D:/Projects/ICOS-SME/Log/batchreports.log</file>
+			<threshold>DEBUG</threshold>
+			<log.pattern>%d %p %c{2} (%C{1}:%M:%L) - %m%n</log.pattern>
+			<console.pattern>%d %p %c{2} (%C{1}:%M:%L) - %m%n</console.pattern>
+			<max.file.size>5MB</max.file.size>
+			<max.backup.index>10</max.backup.index>
+		</logging>
+		<jboss>
+			<ejbhostname>10.20.212.128</ejbhostname>
+			<ejbport>4507</ejbport>
+			<remoteejbname>ejbuser</remoteejbname>
+			<remoteejbpass>remote@123</remoteejbpass>
+			<dsismebatch>java:/ds_ICOSSME_BATCH</dsismebatch>			  		
+		</jboss>
+	</batch.reports>
+	<batch.common>
+		<etc>
+			<context.factory>weblogic.jndi.WLInitialContextFactory</context.factory>
+			<upload.path>C:/cd/bcaisme/upload</upload.path>
+			<condir.path>C:/cd/bcaisme</condir.path>
+			<condir.path.sid>C:/cd/sid/isme</condir.path.sid>
+			<glilstrans.textfile>GLILS.TXT</glilstrans.textfile>
+			<glidstrans.textfile>GLIDS.TXT</glidstrans.textfile>
+			<ilsacct.textfile>ILSACCT.TXT</ilsacct.textfile>
+			<aubranch.textfile>PYBRANCH.TXT</aubranch.textfile>
+		</etc>
+		<datasource>
+			<icossme>
+				<provider.url>t3://localhost:8080</provider.url>
+				<jndi>java:/ds_ICOSSME</jndi>
+			</icossme>
+			<icossme2>
+				<provider.url>t3://localhost:8080</provider.url>
+				<jndi>java:/ds_ICOSSME</jndi>
+			</icossme2>
+		</datasource>
+		<email>
+			<smtp.addr>10.20.200.220</smtp.addr>
+			<sender.email.addr>icossme-noreply@dti.co.id</sender.email.addr>
+			<email.template.folder>D:/Projects/ICOS-SME/Batch-ICOSSME-Common/src/template</email.template.folder>
+			<aubranch.recipient>victor_liliwidjaja@bca.co.id,andrianto_effendy@bca.co.id</aubranch.recipient>
+			<aubranch.email.template.file>email_aubranch.html</aubranch.email.template.file>
+		</email>
+		<logging>
+			<category>BATCHSME</category>
+			<file>D:/Projects/ICOS-SME/Log/batch_sme.log</file>
+			<threshold>ALL</threshold>
+			<log.pattern>%d (%C{1}:%M:%L) - %m%n</log.pattern>
+			<console.pattern>%d (%C{1}:%M:%L) - %m%n</console.pattern>
+			<max.file.size>5MB</max.file.size>
+			<max.backup.index>10</max.backup.index>
+		</logging>
+		<data.extract>
+			<kyc.isme.indv>
+				<output.folder>C:/cd/bcaisme</output.folder>
+				<output.file>KYISME_I.TXT</output.file>
+				<col.header></col.header>
+				<col.delimiter></col.delimiter>
+				<sql>SELECT RPAD(&#39; &#39;,11,&#39; &#39;)||RPAD(A.CIS_NO,11,&#39; &#39;)||RPAD(NVL(A.ID_NO,&#39; &#39;),20,&#39; &#39;)||NVL2(BIRTH_DATE,TO_CHAR(B.BIRTH_DATE, &#39;YYYYMMDD&#39;),&#39;        &#39;)||RPAD(NVL(B.BIRTH_PLACE,&#39; &#39;),20,&#39; &#39;)||RPAD(NVL(A.MOTHER_MAIDEN,&#39; &#39;),20,&#39; &#39;)||RPAD(NVL(A.BIZ_ADDR_LINE1,&#39; &#39;),40,&#39; &#39;)||RPAD(NVL(A.BIZ_ADDR_LINE2,&#39; &#39;),40,&#39; &#39;)||RPAD(NVL(A.BIZ_ADDR_LINE3,&#39; &#39;),40,&#39; &#39;)||RPAD(NVL(A.BIZ_ADDR_LINE4,&#39; &#39;),40,&#39; &#39;)||SUBSTR(NVL(A.JOB_POS_CD,&#39;009&#39;),2,2)||&#39;   &#39;||SUBSTR(TRIM(C.BRANCH_CD),0,4)||TO_CHAR(A.DATE_CREATED, &#39;YYYYMMDD&#39;)||&#39;ISME&#39; FROM SME_APP_CUST A, SME_CUST B, SME_APP C WHERE A.CUST_ID = B.CUST_ID AND A.APP_ID = C.ID AND A.DATE_CREATED = (SELECT MAX(DATE_CREATED) FROM SME_APP_CUST WHERE CIS_NO = A.CIS_NO) AND A.CUST_TYPE_CD=&#39;I&#39; ORDER BY A.CIS_NO, A.DATE_CREATED DESC</sql>
+			</kyc.isme.indv>
+			<kyc.isme.org>
+				<output.folder>C:/cd/bcaisme</output.folder>
+				<output.file>KYISME_O.TXT</output.file>
+				<col.header></col.header>
+				<col.delimiter></col.delimiter>
+				<sql>SELECT RPAD(&#39; &#39;,11,&#39; &#39;)||RPAD(A.CIS_NO,11,&#39; &#39;)||RPAD(&#39; &#39;,20,&#39; &#39;)||RPAD(NVL(A.BIZ_ADDR_LINE1,&#39; &#39;),40,&#39; &#39;)||RPAD(NVL(A.BIZ_ADDR_LINE2,&#39; &#39;),40,&#39; &#39;)||RPAD(NVL(A.BIZ_ADDR_LINE3,&#39; &#39;),40,&#39; &#39;)||RPAD(NVL(A.BIZ_ADDR_LINE4,&#39; &#39;),40,&#39; &#39;)||CASE WHEN A.CUST_CAT_CD = &#39;01&#39; THEN &#39;001&#39; WHEN A.CUST_CAT_CD = &#39;02&#39; THEN &#39;002&#39; WHEN A.CUST_CAT_CD = &#39;03&#39; THEN &#39;003&#39; WHEN A.CUST_CAT_CD = &#39;04&#39; THEN &#39;004&#39; WHEN A.CUST_CAT_CD = &#39;08&#39; THEN &#39;008&#39; WHEN A.CUST_CAT_CD = &#39;13&#39; THEN &#39;013&#39; WHEN A.CUST_CAT_CD = &#39;16&#39; THEN &#39;016&#39; ELSE &#39;   &#39; END||RPAD(NVL((SELECT UPPER(DSC) FROM SME_MT_STD WHERE GROUP_ID=63 AND CODE=A.BCA_COM_SECTOR_CD),&#39; &#39;),30,&#39; &#39;)||CASE WHEN (NVL(B.CURR_CASH_IN_MONTH,0)+NVL(B.CURR_ACC_RECV,0)+NVL(B.CURR_INVENTORY,0)+NVL(B.CURR_FIXED_ASSET,0)+NVL(B.CURR_FIXED_ASSET_WO_DEPRE,0)+NVL(B.CURR_OTHER_CURR_ASSET,0)+NVL(B.CURR_OTHER_NON_CURR_ASSET,0))&lt;=1000 THEN &#39;001&#39; WHEN (NVL(B.CURR_CASH_IN_MONTH,0)+NVL(B.CURR_ACC_RECV,0)+NVL(B.CURR_INVENTORY,0)+NVL(B.CURR_FIXED_ASSET,0)+NVL(B.CURR_FIXED_ASSET_WO_DEPRE,0)+NVL(B.CURR_OTHER_CURR_ASSET,0)+NVL(B.CURR_OTHER_NON_CURR_ASSET,0))&lt;=10000 THEN &#39;002&#39; WHEN (NVL(B.CURR_CASH_IN_MONTH,0)+NVL(B.CURR_ACC_RECV,0)+NVL(B.CURR_INVENTORY,0)+NVL(B.CURR_FIXED_ASSET,0)+NVL(B.CURR_FIXED_ASSET_WO_DEPRE,0)+NVL(B.CURR_OTHER_CURR_ASSET,0)+NVL(B.CURR_OTHER_NON_CURR_ASSET,0))&lt;=250000 THEN &#39;003&#39; ELSE &#39;004&#39; END||CASE WHEN NVL(B.CURR_YEARLY_TOTAL_SALE,0)&lt;=1000 THEN &#39;001&#39; WHEN NVL(B.CURR_YEARLY_TOTAL_SALE,0)&lt;=10000 THEN &#39;002&#39; WHEN NVL(B.CURR_YEARLY_TOTAL_SALE,0)&lt;=250000 THEN &#39;003&#39; ELSE &#39;004&#39; END||SUBSTR(TRIM(C.BRANCH_CD),0,4)||TO_CHAR(A.DATE_CREATED, &#39;YYYYMMDD&#39;)||&#39;ISME&#39; FROM SME_APP_CUST A, SME_APP_FIN_STMT B, SME_APP C WHERE A.APP_ID=C.ID AND A.APP_ID = B.APP_ID AND A.DATE_CREATED = (SELECT MAX(DATE_CREATED) FROM SME_APP_CUST WHERE CIS_NO = A.CIS_NO) AND A.CUST_TYPE_CD=&#39;O&#39; ORDER BY A.CIS_NO, A.DATE_CREATED DESC</sql>
+			</kyc.isme.org>
+			<skmr.general.info>
+				<output.folder>C:/cd/bcaisme</output.folder>
+				<output.file>SKMR_GENERAL_INFO.TXT</output.file>
+				<col.header>CIS_NO~CUSTOMER_NAME~NO_MEMO~BRANCH_CD~BRANCH_DSC~JENIS_PENGOLAHAN~CREDIT_MEMO_TYPE~IS_CASH_COVERED~DATE_APPLIED~DATE_OF_MEMO~CRF_SCORE~CRF_RR~ERF_SCORE~ERF_RR~FINAL_SCORE~SCORE_DATE~APP_STATUS~CREDIT_CAT~BCA_ECO_SECTOR_CD~DATE_REG~DEBTOR_SINCE~TOTAL_KUU~TOTAL_CAB_LAIN~TOTAL_FAC_LIMIT</col.header>
+				<col.delimiter>~</col.delimiter>
+				<sql>SELECT CIS_NO,CUSTOMER_NAME,NO_MEMO,BRANCH_CD, BRANCH_DSC,JENIS_PENGOLAHAN,CREDIT_MEMO_TYPE,IS_CASH_COVERED,DATE_APPLIED,DATE_OF_MEMO,CRF_SCORE,CRF_RR,ERF_SCORE,ERF_RR,FINAL_SCORE,SCORE_DATE,APP_STATUS,CREDIT_CAT,BCA_ECO_SECTOR_CD,DATE_REG,DEBTOR_SINCE,TOTAL_KUU,TOTAL_CAB_LAIN,TOTAL_FAC_LIMIT FROM (SELECT APP_CUST.CIS_NO AS CIS_NO,CUST.FULLNAME AS CUSTOMER_NAME,APP.REFF_NO AS NO_MEMO, APP.BRANCH_CD, (SELECT DSC FROM SME_SEC_MASTER_BRANCH IN1 WHERE IN1.BRANCH_CD=APP.BRANCH_CD AND ROWNUM=1) AS BRANCH_DSC,(SELECT DSC FROM SME_MT_STD WHERE GROUP_ID=106 AND CODE=APP.JENIS_PENGOLAHAN_CD) AS JENIS_PENGOLAHAN,APP.CREDIT_MEMO_TYPE_CD||&#39; - &#39;||(SELECT DSC FROM SME_MT_STD WHERE GROUP_ID=78 AND CODE=APP.CREDIT_MEMO_TYPE_CD) AS CREDIT_MEMO_TYPE,APP.IS_CASH_COVERED AS IS_CASH_COVERED,TO_CHAR(APP.DATE_APPLIED,&#39;DD-MM-YYYY HH24:MI:SS&#39;) AS DATE_APPLIED,TO_CHAR(APP.DATE_CREDIT_MEMO,&#39;DD-MM-YYYY HH24:MI:SS&#39;) AS DATE_OF_MEMO,SCORE_HIST.CRF_SCORE AS CRF_SCORE,SCORE_HIST.CRF_RR AS CRF_RR,SCORE_HIST.ERF_SCORE AS ERF_SCORE,SCORE_HIST.ERF_RR AS ERF_RR,SCORE_HIST.FINAL_SCORE AS FINAL_SCORE,TO_CHAR(SCORE_HIST.DATE_UPDATED, &#39;DD-MM-YYYY HH24:MI:SS&#39;) AS SCORE_DATE,WF_HIST.APP_STATUS AS APP_STATUS,APP_CUST.CREDIT_CAT_CD||&#39; - &#39;||(SELECT DSC FROM SME_MT_STD WHERE GROUP_ID=68 AND CODE=APP_CUST.CREDIT_CAT_CD) AS CREDIT_CAT,    APP_CUST.BCA_ECO_SECTOR_CD AS BCA_ECO_SECTOR_CD,    TO_CHAR(APP_CUST.DATE_REG, &#39;DD-MM-YYYY HH24:MI:SS&#39;) AS DATE_REG,APP_CUST.BCA_DEBTOR_SINCE AS DEBTOR_SINCE,NVL((SELECT SUM(CURRENT_PLAFOND) FROM SME_APP_VW_GROUP_EKS_STUAN_USH WHERE APP_ID=APP.ID),0) AS TOTAL_KUU,NVL((SELECT SUM(CURRENT_PLAFOND) FROM SME_APP_VW_NEW_FACILITY_OTHER WHERE APP_ID=APP.ID),0) AS TOTAL_CAB_LAIN,NVL((SELECT SUM(FINAL_LIMIT) FROM SME_APP_VW_NEW_FACILITY WHERE APP_ID = APP.ID AND FAC_CD != &#39;OTHER&#39;),0) AS TOTAL_FAC_LIMIT,ROW_NUMBER() OVER (PARTITION BY APP.REFF_NO ORDER BY APP.DATE_CREATED DESC) AS RANK	FROM 	SME_APP_CUST APP_CUST 	INNER JOIN SME_APP APP ON APP_CUST.APP_ID=APP.ID	INNER JOIN SME_CUST CUST ON CUST.CUST_ID=APP_CUST.CUST_ID	INNER JOIN (SELECT * FROM SME_APP_WF_HISTORY WHERE STATUS=0) WF_HIST ON WF_HIST.APP_ID=APP.ID	INNER JOIN (SELECT * FROM SME_APP_APPR_SCORE WHERE APP_ID||&#39;-&#39;||TO_CHAR(DATE_UPDATED,&#39;YYYYMMDDHH24MISS&#39;) IN (SELECT MAX(APP_ID||&#39;-&#39;||TO_CHAR(DATE_UPDATED,&#39;YYYYMMDDHH24MISS&#39;)) FROM SME_APP_APPR_SCORE GROUP BY APP_ID)) SCORE_HIST ON SCORE_HIST.APP_ID=APP.ID	WHERE WF_HIST.APP_STATUS IN (&#39;ApplicationCompleted&#39;,&#39;ApplicationRejected&#39;,&#39;Approved&#39;,&#39;Cancel&#39;,&#39;Decline&#39;,&#39;PendingCSPreparation&#39;,&#39;PendingCSReview1&#39;,&#39;PendingCSReview2&#39;,&#39;PendingCSTaskAssignment&#39;,&#39;PendingDisbApproval&#39;,&#39;PendingDisbInstruction&#39;,&#39;PendingDisbUpdate&#39;,&#39;PendingDisbVerify&#39;,&#39;PendingDisbursementInsApproval&#39;,&#39;PendingDisbursementResult&#39;,&#39;PendingLetterOfferPreparation&#39;,&#39;PendingLetterOfferReview&#39;,&#39;PendingLetterofOfferSent&#39;,&#39;Rejected&#39;) ORDER BY APP_CUST.CIS_NO, APP.REFF_NO) WHERE RANK=1</sql>
+			</skmr.general.info>
+			<skmr.scoring.reason>
+				<output.folder>C:/cd/bcaisme</output.folder>
+				<output.file>SKMR_SCORING_REASON.TXT</output.file>
+				<col.header>NO_MEMO~REASON_BLACK~REASON_GREY~REASON_SPECIAL_COND~REASON_INCOMPLETE</col.header>
+				<col.delimiter>~</col.delimiter>
+				<sql>SELECT APP.REFF_NO,SCORE.REASON_BLACK,SCORE.REASON_GRAY,SCORE.REASON_SPECIAL_COND,SCORE.REASON_INCOMPLETE FROM (SELECT SCORE.APP_ID,REPLACE(SCORE.REASON_BLACK, CHR(38)||&#39;gt;&#39;, &#39;>&#39;) REASON_BLACK,REPLACE(SCORE.REASON_GRAY, CHR(38)||&#39;gt;&#39;, &#39;>&#39;) REASON_GRAY,REPLACE(SCORE.REASON_SPECIAL_COND, CHR(38)||&#39;gt;&#39;, &#39;>&#39;) REASON_SPECIAL_COND,REPLACE(SCORE.REASON_INCOMPLETE, CHR(38)||&#39;gt;&#39;, &#39;>&#39;) REASON_INCOMPLETE,ROW_NUMBER () OVER (PARTITION BY SCORE.APP_ID ORDER BY SCORE.DATE_UPDATED DESC) RANK FROM SME_APP_APPR_SCORE SCORE) SCORE INNER JOIN SME_APP APP ON SCORE.APP_ID=APP.ID WHERE RANK=1 ORDER BY REFF_NO</sql>
+			</skmr.scoring.reason>
+		</data.extract>
+		<sql>
+			<sql.template.folder>/bcaisme/app/bin/batchprogram/sql</sql.template.folder>
+		</sql>
+	</batch.common>
+</config>
