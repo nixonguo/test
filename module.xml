@@ -1,4 +1,4 @@
-<module xmlns="urn:jboss:module:1.1" name="com.oracle">
+<module xmlns="urn:jboss:module:1.1" name="com.oracle.jdbc">
   <resources>
     <resource-root path="ojdbc6_db12c.jar"/>
   </resources>
