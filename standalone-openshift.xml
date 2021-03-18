@@ -142,26 +142,26 @@
         <subsystem xmlns="urn:jboss:domain:bean-validation:1.0"/>
         <subsystem xmlns="urn:jboss:domain:datasources:5.0">
             <datasources>
-				<datasource jndi-name="java:/ds_ICOSSME" pool-name="ds_ICOSSME" enabled="true">
+                <datasource jndi-name="java:/ds_ICOSSME" pool-name="ds_ICOSSME" enabled="true">
                     <connection-url>jdbc:oracle:thin:@10.20.215.142:1526:DICOSSME</connection-url>
-                    <driver>oracle</driver>
-                    <security>
-						<user-name>ESECURE</user-name>
+					<driver>oracle</driver>
+					<security>
+                        <user-name>ESECURE</user-name>
 						<password>s3cur3</password>
                     </security>
-                    <validation>
+					<validation>
                         <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker"/>
-                        <stale-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleStaleConnectionChecker"/>
-                        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"/>
+						<stale-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleStaleConnectionChecker"/>
+						<exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"/>
                     </validation>
                 </datasource>
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
                     </driver>
-					<driver name="oracle" module="com.oracle">
-						<xa-datasource-class>oracle.jdbc.OracleDriver</xa-datasource-class>
-					</driver>
+                    <driver name="oracle" module="com.oracle">
+                        <xa-datasource-class>oracle.jdbc.xa.client.OracleXADataSource</xa-datasource-class>
+                    </driver>
                 </drivers>
             </datasources>
         </subsystem>
