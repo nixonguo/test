@@ -144,8 +144,7 @@
             <datasources>
                 <datasource jndi-name="java:/ds_ICOSSME" pool-name="ds_ICOSSME" enabled="true">
                     <connection-url>jdbc:oracle:thin:@10.20.215.142:1526:DICOSSME</connection-url>
-                    <driver-class>oracle.jdbc.OracleDriver</driver-class>
-                    <driver>ojdbc6_db12c-12.1.0.1.0.jar</driver>
+					<driver>oracle</driver>
 					<security>
                         <user-name>ESECURE</user-name>
 						<password>s3cur3</password>
@@ -154,6 +153,9 @@
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+                    </driver>
+                    <driver name="oracle" module="com.oracle">
+                        <driver-class>oracle.jdbc.OracleDriver</driver-class>
                     </driver>
                 </drivers>
             </datasources>
