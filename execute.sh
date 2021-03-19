@@ -23,7 +23,7 @@ echo "=> Waiting for the server to boot"
 wait_for_server
 
 echo "=> Executing the commands"
-$JBOSS_CLI -c --file=`/tmp/apps "$0"`/datasource-commands.cli
+$JBOSS_CLI -c --file=`$JBOSS_HOME/custom "$0"`/datasource-commands.cli
 
 echo "=> Shutting down WildFly"
 if [ "$JBOSS_MODE" = "standalone" ]; then
