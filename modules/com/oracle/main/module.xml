@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <module xmlns="urn:jboss:module:1.1" name="com.oracle">
   <resources>
     <resource-root path="ojdbc6_db12c.jar"/>
