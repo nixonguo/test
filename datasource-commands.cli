@@ -1,9 +1,8 @@
 batch
+
 module add --name=com.oracle --resources=/tmp/apps/ojdbc6_db12c.jar --module-xml=/tmp/apps/module.xml
 /subsystem=datasources/jdbc-driver=oracle:add(driver-name=oracle,driver-module-name=com.oracle,driver-class-name=oracle.jdbc.OracleDriver,driver-xa-datasource-class-name=oracle.jdbc.xa.client.OracleXADataSource)
 
 data-source add --name=ds_ICOSSME --driver-name=oracle --jndi-name=java:/ds_ICOSSME --connection-url=jdbc:oracle:thin:@10.20.215.142:1526:DICOSSME --user-name=ESECURE --password=s3cur3 --use-ccm=false --max-pool-size=25 --blocking-timeout-wait-millis=5000 --enabled=true
 
-reload
-run batch
-shutdown
+run-batch
