@@ -16,13 +16,11 @@ RUN cp /tmp/apps/test.war $JBOSS_HOME/standalone/deployments/ROOT.war
 
 RUN mkdir -p $JBOSS_HOME/modules/com/oracle/main
 
-RUN cp /tmp/apps/modules/com/oracle/main/*
-$JBOSS_HOME/modules/com/oracle/main
+RUN cp /tmp/apps/modules/com/oracle/main/* $JBOSS_HOME/modules/com/oracle/main
 
 ### CUSTOM CONFIG 
 
-RUN cp /tmp/apps/config/standalone-openshift.xml
-$JBOSS_HOME/standalone/configuration/standalone-openshift.xml
+RUN cp /tmp/apps/config/standalone-openshift.xml $JBOSS_HOME/standalone/configuration/standalone-openshift.xml
 
 ### RUN JBOSS
 
