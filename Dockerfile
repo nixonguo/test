@@ -1,7 +1,5 @@
 FROM registry.redhat.io/jboss-eap-7/eap73-openjdk8-openshift-rhel7
 
-COPY /server $JBOSS_HOME
-
 USER root
 
 RUN yum install git -y
