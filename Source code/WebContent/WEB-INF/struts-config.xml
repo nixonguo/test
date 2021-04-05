@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="helloForm" type="form.HelloForm" />
+		<form-bean name="loginForm" type="form.LoginForm" />
+		<form-bean name="customerForm" type="form.CustomerForm" />
+		<form-bean name="provinceForm" type="form.ProvinceForm" />
+	</form-beans>
+
+
+	<global-forwards>
+		<forward name="globalErrorPage" path="/bit/common/global_error_page.jsp" />
+	</global-forwards>
+
+	<action-mappings>
+		<action name="helloForm" path="/hello" type="controller.HelloController">
+			<forward name="halo" path="/bit/hello.jsp" />
+		</action>
+		<action name="loginForm" path="/login" type="controller.LoginController" scope="session">
+			<forward name="login" path="/bit/login.jsp" />
+			<forward name="home" path="/bit/home.jsp" />
+		</action>
+		<action name="customerForm" path="/customer" type="controller.CustomerController">
+			<forward name="list" path="/bit/customer/list.jsp" />
+			<forward name="edit" path="/bit/customer/edit.jsp" />
+			<forward name="edit2" path="/bit/customer/edit2.jsp" />
+		</action>
+		
+		<action name="provinceForm" path="/province" type="controller.ProvinceController">
+			<forward name="list" path="/bit/maintenance/province/list.jsp" />
+			<forward name="detail" path="/bit/maintenance/province/detail.jsp" />
+			<forward name="edit" path="/bit/maintenance/province/edit.jsp" />
+		</action>
+	</action-mappings>
+
+	<message-resources parameter="bcaicos_msg" />
+</struts-config>

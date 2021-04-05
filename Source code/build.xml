@@ -1,0 +1,47 @@
+<project default="copyToJbossDir">
+
+	<property name="projectName" value="BIT" />
+	<property name="warName" value="bit-struts-mon" />
+	<property name="webDir" value="WebContent" />
+	<property name="srcDir" value="src" />
+	<property name="classDir" value="${webDir}/WEB-INF/classes" />
+	<property name="libRepository" value="${webDir}/WEB-INF/lib" />
+	<property name="deploymentDir" value="deployment" />
+
+	<path id="libPath">
+		<fileset dir="${libRepository}" >
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="cleanWebClasses">
+		<delete dir="${classDir}" excludes="*.properties" />
+	</target>
+
+	<target name="cleanAndCompile" depends="cleanWebClasses">
+		<javac includeantruntime="false" debug="on" srcdir="${srcDir}" destdir="${classDir}" includes="**/*.java" classpathref="libPath" />
+	</target>
+
+	<target name="compile">
+		<javac includeantruntime="false" debug="on" srcdir="${srcDir}" destdir="${classDir}" includes="**/*.java" classpathref="libPath" />
+		<copy todir="${webDir}/WEB-INF/classes">
+			<fileset file="${projectLocation}/${projectName}/src/bcaicos_msg.properties" />
+		</copy>
+	</target>
+
+	<target name="webwar" depends="cleanAndCompile">
+		<jar jarfile="${deploymentDir}/${warName}.war" basedir="${webDir}" defaultexcludes="" excludes="">
+			<manifest>
+	    		<attribute name="Built-By" value="Adrian Victor Juandi" />
+				<attribute name="Dependencies" value="org.apache.log4j" />
+	    	</manifest>
+		</jar>
+	</target>
+	
+	<property name="jbossDir" value="D:\jboss-eap-7.0\standalone\deployments" />
+	<target name="copyToJbossDir" depends="webwar">
+		<copy todir="${jbossDir}">
+			<fileset file="${deploymentDir}/${warName}.war" />
+		</copy>
+	</target>
+</project>
