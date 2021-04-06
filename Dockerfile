@@ -22,6 +22,10 @@ RUN cp /tmp/apps/modules/com/oracle/main/* $JBOSS_HOME/modules/com/oracle/main
 
 RUN cp /tmp/apps/config/standalone-openshift.xml $JBOSS_HOME/standalone/configuration/standalone-openshift.xml
 
+### ENV VARIABLES
+
+ENV DISABLE_EMBEDDED_JMS_BROKER=true
+
 ### RUN JBOSS
 
 RUN chown -R jboss:root $JBOSS_HOME && chmod -R ug+rwX $JBOSS_HOME
