@@ -8,6 +8,23 @@ ENV JBOSS_HOME /opt/jboss/wildfly
 
 USER root
 
+RUN yum install git -y
+
+### DOWNLOAD FROM GIT 
+
+RUN git clone -b dockerfile https://github.com/nixonguo/test.git /tmp/apps
+
+### COPY TO DEPLOYMENT
+
+RUN cp /tmp/apps/test.war $JBOSS_HOME/standalone/deployments/ROOT.war
+
+### ORACLE DB DRIVER 
+
+RUN mkdir -p $JBOSS_HOME/modules/com/oracle/main
+
+RUN cp /tmp/apps/modules/com/oracle/main/* $JBOSS_HOME/modules/com/oracle/main
+
+
 # Add the WildFly distribution to /opt, and make wildfly the owner of the extracted tar content
 # Make sure the distribution is available from a well-known place
 RUN cd $HOME \
