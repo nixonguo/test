@@ -16,7 +16,7 @@ RUN git clone -b dockerfile https://github.com/nixonguo/test.git /tmp/apps
 
 ### COPY TO DEPLOYMENT
 
-RUN cp /tmp/apps/test.war $JBOSS_HOME/standalone/deployments/ROOT.war
+RUN cp /tmp/apps/test.war $JBOSS_HOME/standalone/deployments
 
 ### ORACLE DB DRIVER 
 
