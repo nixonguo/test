@@ -14,16 +14,6 @@ RUN yum install git -y
 
 RUN git clone -b dockerfile https://github.com/nixonguo/test.git /tmp/apps
 
-### COPY TO DEPLOYMENT
-
-RUN cp /tmp/apps/test.war $JBOSS_HOME/standalone/deployments
-
-### ORACLE DB DRIVER 
-
-RUN mkdir -p $JBOSS_HOME/modules/com/oracle/main
-
-RUN cp /tmp/apps/modules/com/oracle/main/* $JBOSS_HOME/modules/com/oracle/main
-
 
 # Add the WildFly distribution to /opt, and make wildfly the owner of the extracted tar content
 # Make sure the distribution is available from a well-known place
@@ -35,6 +25,17 @@ RUN cd $HOME \
     && rm wildfly-$WILDFLY_VERSION.tar.gz \
     && chown -R jboss:0 ${JBOSS_HOME} \
     && chmod -R g+rw ${JBOSS_HOME}
+
+### COPY TO DEPLOYMENT
+
+RUN cp /tmp/apps/test.war $JBOSS_HOME/standalone/deployments
+
+### ORACLE DB DRIVER 
+
+RUN mkdir -p $JBOSS_HOME/modules/com/oracle/main
+
+RUN cp /tmp/apps/modules/com/oracle/main/* $JBOSS_HOME/modules/com/oracle/main
+
 
 # Ensure signals are forwarded to the JVM process correctly for graceful shutdown
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
